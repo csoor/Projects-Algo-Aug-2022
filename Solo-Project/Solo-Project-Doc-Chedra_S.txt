@@ -1,0 +1,14 @@
+Description: 
+I am creating a food blog of cute bento ideas where user can either look for or post bento recipes that they think looks cute.
+Stack:
+I will be using React/JavaScript for my solo project. 
+Feature list:
+Upload Image
+Level of Difficulty 
+Description
+How many likes receives
+Ingredients List
+Cook time
+Servings
+GitHub:
+https://github.com/csoor/Projects-Algo-Aug-2022
