@@ -1,0 +1,10 @@
+#display-img {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+
+}

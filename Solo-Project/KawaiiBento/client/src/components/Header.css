@@ -1,0 +1,17 @@
+.header {
+    background-color: pink;
+    color: aqua;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+.nav-link {
+    color: violet;
+    text-decoration: none;
+    margin-right: .5rem;
+}
+
+.active {
+    color: aqua;
+    font-weight: bold;
+}
