@@ -11,7 +11,8 @@ const NewBento = () => {
   const [ingredients, setIngredients] = useState("N/A");
   const [cookTime, setCookTime] = useState("");
   const [servings, setServings] = useState("");
-
+  // const [errors, setErrors] = useState({});
+  
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -30,6 +31,7 @@ const NewBento = () => {
       navigate('/');
     })
     .catch((err) => {console.log('POST ERROR!!', err)})
+    // .catch((err) => setErrors(err.response.data.errors));
   }
 
   function handleImg(e) {
@@ -49,7 +51,7 @@ const NewBento = () => {
               name="foodArt" 
               required
             />
-            
+            {/* {errors.foodArt && <span>{errors.foodArt.message}</span>} */}
         </div>
         <div className="form-fields">
           <label>Title: </label>
@@ -60,15 +62,18 @@ const NewBento = () => {
               type="text"
               required
             />
+            {/* {errors.title && <span>{errors.title.message}</span>} */}
           </div>
           <div className="form-fields">
             <label>Difficulty Level: </label>
             <select value={level} name='level' onChange={(e) => setLevel(e.target.value)} required>
+              <option ></option>
               <option value='Easy'>Easy</option>
               <option value='Medium'>Medium</option>
               <option value='Hard'>Hard</option>
               <option value='Nightmare'>Nightmare</option>
             </select>
+            {/* {errors.level && <span>{errors.level.message}</span>} */}
           </div>
           <div className="form-fields">
             <label>Cook Time: </label>
@@ -79,6 +84,7 @@ const NewBento = () => {
               type="text"
               required
             />
+            {/* {errors.cookTime && <span>{errors.cookTime.message}</span>} */}
           </div>
           <div className="form-fields">
             <label>Servings: </label>
@@ -89,6 +95,7 @@ const NewBento = () => {
               type="number"
               required
             />
+            {/* {errors.servings && <span>{errors.servings.message}</span>} */}
           </div>
           <div className="form-fields">
             <label>Description: </label>
@@ -100,6 +107,7 @@ const NewBento = () => {
             rows="5" cols="30"
             required
             />
+            {/* {errors.description && <span>{errors.description.message}</span>} */}
           </div>
           <div className="form-fields">
             <label>Ingredients: </label>
@@ -110,6 +118,7 @@ const NewBento = () => {
             type="text"
             rows="5" cols="30"
             />
+            
           </div>
           <button type="submit">Add New Bento</button>
       </form>

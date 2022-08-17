@@ -11,6 +11,7 @@ const Register = ({setLogIn}) => {
         password: '',
         confirmPassword: ''
     });
+    const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
         setUser({
@@ -27,7 +28,7 @@ const Register = ({setLogIn}) => {
             setLogIn(true);
             navigate('/');
         })
-        .catch((err) => console.log(err));
+        .catch((err) => setErrors(err.response.data.errors));
     };
   return (
     <form onSubmit={handleSubmit}>
@@ -38,8 +39,9 @@ const Register = ({setLogIn}) => {
             name='firstName'
             value={user.firstName}
             onChange={handleChange}
-            required
+            
         />
+        {errors.firstName && <span>{errors.firstName.message}</span>}
         </div>
         <div className="form-fields">
         <label htmlFor='lastName'>Last Name: </label>
@@ -48,8 +50,8 @@ const Register = ({setLogIn}) => {
             name='lastName'
             value={user.lastName}
             onChange={handleChange}
-            required
         />
+        {errors.lastName && <span>{errors.lastName.message}</span>}
         </div>
         <div className="form-fields">
         <label htmlFor='email'>Email: </label>
@@ -58,8 +60,8 @@ const Register = ({setLogIn}) => {
             name='email'
             value={user.email}
             onChange={handleChange}
-            required
         />
+        {errors.email && <span>{errors.email.message}</span>}
         </div>
         <div className="form-fields">
         <label htmlFor='password'>Password: </label>
@@ -68,8 +70,8 @@ const Register = ({setLogIn}) => {
             name='password'
             value={user.password}
             onChange={handleChange}
-            required
         />
+        {errors.password && <span>{errors.password.message}</span>}
         </div>
         <div className="form-fields">
         <label htmlFor='confirmPassword'>Confirm Password: </label>
@@ -78,8 +80,8 @@ const Register = ({setLogIn}) => {
             name='confirmPassword'
             value={user.confirmPassword}
             onChange={handleChange}
-            required
         />
+        {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
         </div>
         <button type='submit'>Register</button>
     </form>

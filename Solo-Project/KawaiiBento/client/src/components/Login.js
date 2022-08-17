@@ -8,6 +8,7 @@ const Login = ({setLogIn}) => {
         email: '',
         password: '',
     });
+    const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
         setUser({
@@ -24,7 +25,8 @@ const Login = ({setLogIn}) => {
             setLogIn(true);
             navigate('/');
         })
-        .catch((err) => console.log(err));
+        // .catch((err) => console.log(err));
+        .catch((err) => setErrors(err.response.data.errors));
     };
   return (
     <form onSubmit={handleSubmit}>
@@ -34,16 +36,18 @@ const Login = ({setLogIn}) => {
             name='email'
             value={user.email}
             onChange={handleChange}
-            required
+            
         />
+        {errors.email && <span>{errors.email.message}</span>}
         <label htmlFor='password'>Password: </label>
         <input 
             type='text'
             name='password'
             value={user.password}
             onChange={handleChange}
-            required
+            
         />
+        {errors.password && <span>{errors.password.message}</span>}
         <button type='submit'>Login</button>
     </form>
   )

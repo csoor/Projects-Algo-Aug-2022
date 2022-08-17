@@ -58,14 +58,12 @@ const Logout = (req, res) => {
 };
 
 const getLoggedInUser = async (req, res) => {
+    console.log('WHY!!!!')
+    console.log('TOKEN', req.cookies);
     const user = jwt.verify(req.cookies.userToken, SECRET);
     User.findOne({_id: user._id})
-        .then((user) => {
-            res.json(user);
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+        .then((user) => {res.json(user);})
+        .catch((err) => {console.log(err);})
 }
 
 module.exports = {

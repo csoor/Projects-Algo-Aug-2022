@@ -5,7 +5,8 @@ const User = require('../models/user.model')
 
 module.exports = {
     getAllBento: (req, res) => {
-        KawaiiBento.find({}).populate('createdBy', 'firstName lastName email')
+        KawaiiBento.find({})
+        .populate('createdBy', 'firstName lastName email')
         .then((allBento) => res.status(201).json(allBento))
         .catch((err) => {console.log('ERROR! Failed to find all Kawaii Bento Recipes', err)
         res.status(400).json({message: 'Oops! Something Went Wrong', error: err});
