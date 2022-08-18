@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <Header  isLoggedIn={isLoggedIn} setLogIn={setLogIn}/>
+      {/* <Header  isLoggedIn={isLoggedIn} setLogIn={setLogIn}/> */}
       <Routes>
         <Route path="/" element={<BentoHome />}/>
         <Route path="/bento/:id" element={<Bento />}/>

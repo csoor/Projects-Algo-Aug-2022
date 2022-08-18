@@ -22,7 +22,7 @@ const Register = ({setLogIn}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/register', user, {withCredentials:true})
+        axios.post('http://localhost:8000/register', user)
         .then((res) =>{
             console.log(res.data);
             setLogIn(true);

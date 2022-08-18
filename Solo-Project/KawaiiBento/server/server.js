@@ -7,7 +7,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
-app.use(cors({origin: 'http://localhost:3000', credentials: true}));
+app.use(cors({ credentials: true}));
 app.use(express.json(), express.urlencoded({ extended: true }));
 
 require('./routes/kawaii.routes')(app)

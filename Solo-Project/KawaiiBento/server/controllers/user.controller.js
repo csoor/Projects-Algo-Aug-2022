@@ -11,7 +11,7 @@ const Register = async (req, res) => {
         const newUser = await user.save();
         console.log('User Created!!', newUser);
         const userToken = jwt.sign(
-            {_id: newUser._id, email: newUser.email, firstName: newUser.firstName, lastName: newUser.lastName}, SECRET,
+            {_id: newUser._id, firstName: newUser.firstName, lastName: newUser.lastName, email: newUser.email}, SECRET,
         );
         console.log('JWT:', userToken);
         res
@@ -61,6 +61,7 @@ const getLoggedInUser = async (req, res) => {
     console.log('WHY!!!!')
     console.log('TOKEN', req.cookies);
     const user = jwt.verify(req.cookies.userToken, SECRET);
+    console.log('WHY MUST YOU BE NULL')
     User.findOne({_id: user._id})
         .then((user) => {res.json(user);})
         .catch((err) => {console.log(err);})
