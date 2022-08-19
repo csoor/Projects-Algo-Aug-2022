@@ -5,12 +5,14 @@ import Image from './Image.css';
 
 const BentoHome = () => {
   const [bento, setBento] = useState([]);
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
   useEffect(() => {
     axios.get('http://localhost:8000/api/bento')
     .then((res) => {
       console.log(res.data);
       setBento(res.data);
+      setUser(res.data);
     })
     .catch((err) => console.log('Error!!!',err));
   }, []);
@@ -40,6 +42,12 @@ const BentoHome = () => {
   }; */
   return (
     <div className='container'>
+      <nav className='header'>
+      <Link className="nav-link" to="/login">Login</Link>
+      <span> | </span>
+      <Link className="nav-link" to="/register">Register</Link>
+      </nav>
+      <h2>Welcome </h2>
       {bento.map((kawaii) => (
           <div key={kawaii._id}>
             <Link to={`/bento/${kawaii._id}`}>{kawaii.title}</Link>

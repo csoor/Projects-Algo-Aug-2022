@@ -6,9 +6,10 @@
 }
 
 .nav-link {
-    color: violet;
+    color: rgb(4, 248, 175);
     text-decoration: none;
     margin-right: .5rem;
+    
 }
 
 .active {

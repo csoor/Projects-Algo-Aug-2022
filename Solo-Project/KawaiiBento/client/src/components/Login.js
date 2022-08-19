@@ -19,7 +19,7 @@ const Login = ({setLogIn}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:8000/login`, user, {withCredentials:true})
+        axios.post('http://localhost:8000/login', user, {withCredentials:true})
         .then((res) =>{
             console.log(res.data);
             setLogIn(true);
