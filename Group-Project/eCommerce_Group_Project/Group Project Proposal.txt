@@ -1,0 +1,29 @@
+﻿Group Project Proposal
+ 
+eCommerce website (clothing store)
+ 
+ 
+This website will allow users to buy items of clothing chosen from different categories over the internet rather than at a brick-and-mortar location. The main aim of this project is to create a unique eCommerce website specialized in men and women’s clothing with multiple features.
+ 
+ 
+ 
+Features: (MVP)
+-           Admin can create, edit, view and delete products.
+-           Admin can also view orders made by users as well as modify the items created.
+-           Users can access the website, either as a guest user or registered user. Anyone can register to the website free of charge by providing some basic details.
+-           Guest users will be able to browse through all the available products and add them to the shopping cart but will need to register or login to pay for them at the checkout.
+-           Search bar to look for specific items.
+-           Profile page showing both the user’s shipping and billing information.
+ 
+ 
+Features: (product backlog)
+-           Third party API which will display a wide range of clothing including description, price, category and images.
+-           Filters by color, price, etc.
+-           Socket.io will be implemented to notify users when a new item of clothing is added, sold or updated.
+ 
+GitHub repo link- https://github.com/jseepaul1/mern-ecommerce-group-project 
+ 
+Group Members and their Primary Role:
+1.         Joseph Begin- CSS and Front-End
+2.         Chedra Soor- Fill-in with Front and Back-end
+3.         Julie Seepaul- Back-end along with socket.io
