@@ -23,11 +23,20 @@ class SLL {
     font() {
         return this.head ? this.head.value : null;
     }
+    display() {
+        var myList = "";
+        var runner = this.head.next;
+        while(runner != null) {
+            myList += ", " + runner.value;
+            runner = runner.next;
+        }
+        return myList;
+    }
 }
 
 var testFonts = new SLL();
 
 testFonts.addFont(10);
 testFonts.removeFont();
-
+console.log(testFonts.display());
 console.log(testFonts);
